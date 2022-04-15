@@ -2,6 +2,8 @@
 
 Welcome to the 0th Data Structures Lab of Fall 2021! The goal of this lab will be to set expectations for the course and quickly remedy any C++ shortcomings **before** any real assignments are given. **Be sure to read and follow all instructions unless otherwise specified.**
 
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
   1. [C++ Basics Quiz](#part-1-c++-basics-quiz)
   2. [C++ Code Review](#part-2-c++-code-review)
 
