@@ -25,7 +25,7 @@ This will be our Segment Tree, for all intents and purposes.
  
  EX: ```st.update(5,0);```
  
- This would update the tree we created at its 6th cell due to how vectors are counted.
+ This would update the tree we created at its 6th node due to how vectors are counted.
  
  ![image](https://user-images.githubusercontent.com/72944152/163906668-11c3b015-bf0c-4d0e-bb12-eaf5123c3d71.png)
  
@@ -40,7 +40,7 @@ This will be our Segment Tree, for all intents and purposes.
  
  EX: ```st.insert(4,3);```
  
- This would insert the value in the tree we created at its 5th, pushing every value after it to the right.
+ This would insert the value in the tree we created at its 5th node, pushing every value after it to the right.
  
  ![image](https://user-images.githubusercontent.com/72944152/163906880-ce6c3e29-38f1-4870-83d8-2b8902301ec6.png)
  
@@ -54,7 +54,7 @@ When calling the function view, it can take in a string value, (output_file.txt)
 
 EX: ```st.view("normal.txt");```
 
-This should print out the values of each cell in order and create a txt file that has text in it that can be used to create a DOT file, which can be viewed using this online tool: https://dreampuf.github.io/GraphvizOnline/
+This should print out the values of each node in order and create a txt file that has text in it that can be used to create a DOT file, which can be viewed using this online tool: https://dreampuf.github.io/GraphvizOnline/
 
 It should create a DOT file similar to the ones above.
 
