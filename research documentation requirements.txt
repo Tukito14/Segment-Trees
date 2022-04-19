@@ -1,0 +1,9 @@
+1. An absctract (brief synopsis - 1 paragraph in length)
+2. introduction
+3. history (who developed it, and what for)
+4. research (how i researched it)
+5. understanding the algorithms (how they work)
+6. benchmarks (O(n) of what)
+7. contributions
+
+i333 (MLA if really confused)
