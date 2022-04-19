@@ -26,11 +26,8 @@ public:
 	SegmentTree(vector<int> const &values){
 		n = values.size();
 		//Creating a vector that will act as the tree with double the values of size to be able to house the branching values
-		if(n % 2 == 1){
-			data = vector<int>(2 * n);
-		}else{
-			data = vector<int>(2 * n);
-		}
+		data = vector<int>(2 * n);
+		original = values;
 
 		//Copy vector to second half of data
 		copy(values.begin(), values.end(), &data[0] + n);
@@ -42,13 +39,15 @@ public:
 
 	//Updates the value at a specified index with a new value
 	void update(int index, int value){
-		index += n;
-		data[index] = value;
-
+		original[index] = value;
+		n = original.size();
+		
+		data = vector<int>(2 * n);
 		//Updates the minimum of each node thats related to the updated index
-		while (index > 1) {
-			index /= 2;
-			data[index] = min(data[2 * index], data[2 * index + 1]);
+		copy(original.begin(), original.end(), &data[0] + n);
+		//Each node is being filled in from the bottom up
+		for (int index = n - 1; index > 0; index--){
+			data[index] = min(data[index * 2], data[index * 2 + 1]);
 		}
 	}
 
@@ -72,35 +71,39 @@ public:
 
 	//Inserts a new value at the specified index
 	void insert(int insIndex, int insValue){
-		data.insert(data.begin() + insIndex, insValue);
-		data[insIndex] = insValue;
-		this->n++;
-
-		while (insIndex > 1) {
-			insIndex /= 2;
-			data[insIndex] = min(data[2 * insIndex], data[2 * insIndex + 1]);
+		original.insert(original.begin() + insIndex, insValue);
+		original[insIndex] = insValue;
+		n = original.size();
+		
+		data = vector<int>(2 * n);
+		copy(original.begin(), original.end(), &data[0] + n);
+		//Each node is being filled in from the bottom up
+		for (int index = n - 1; index > 0; index--){
+			data[index] = min(data[index * 2], data[index * 2 + 1]);
 		}
 	}
 
 	//Prints out what the tree/vector is currently holding and where, as well as creating a dot file for easier viewing
 	void view(std::string file_name){
 		int current = 2;
+		int var = (n*2)-1;
 		ofstream output_file(file_name);
+		output_file << "digraph G {" << endl << "node [style=filled]" << endl;
 		for(long unsigned int i = 1; i < data.size(); i++){
 			cout << "C" << i << ": " << data[i] << endl;
 			output_file << "C" << i << " [label=""" << data[i] << "]" << endl;
-			if(current < (this->n)*2){
+			if(current <= var){
 				output_file << "C" << i << " -> {C" << current << ", C" << current+1 << "}" << endl;
 				current += 2;
 			}
 		}
-
-		// output_file << "C" << i << " -> {C" << current << ", C" << current+1 << "}" << endl;
+		output_file << "}" << endl;
 	}
 
 private:
 	int n;
 	vector<int> data;
+	vector<int> original;
 };
 
 //Used to read the input file
@@ -120,7 +123,6 @@ int main(int argc, char* argv[]){
     string input_file = argv[1];
     vector<int> numVector;
     vector<string> trees;
-    string treeName, pickTree;
 
     readFile(input_file, &numVector);
 
@@ -130,4 +132,7 @@ int main(int argc, char* argv[]){
 	st2.insert(4,3);
 	st2.view("insert.txt");
 	st2.search(3);
+	st2.update(5,0);
+	st2.view("update.txt");
+	st2.search(0);
 }
