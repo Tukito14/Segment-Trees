@@ -14,26 +14,25 @@ using namespace std;
 
 class SegmentTree {
 public:
-	//Creating a new empty tree only with the input size
-	SegmentTree(int size){
-		n = size;
-		//Creating a vector that will act as the tree with double the values of size to be able to house the branching values
-		//Each value created is 0
-		data = vector<int>(2 * n, 0);
-	}
-
-	//Creating a tree using the information obtained from a file
-	SegmentTree(vector<int> const &values){
+//Creating a tree using the information obtained from a file
+	SegmentTree(vector<int> const &values, string mode){
 		n = values.size();
 		//Creating a vector that will act as the tree with double the values of size to be able to house the branching values
 		data = vector<int>(2 * n);
 		original = values;
+		this->mode = mode;
 
 		//Copy vector to second half of data
 		copy(values.begin(), values.end(), &data[0] + n);
 		//Each node is being filled in from the bottom up
 		for (int index = n - 1; index > 0; index--){
-			data[index] = min(data[index * 2], data[index * 2 + 1]);
+			if(mode == "min"){
+				data[index] = min(data[index * 2], data[index * 2 + 1]);
+			}else if(mode == "max"){
+				data[index] = max(data[index * 2], data[index * 2 + 1]);
+			}else if(mode == "sum"){
+				data[index] = data[index * 2] + data[index * 2 + 1];
+			}
 		}
 	}
 
@@ -41,13 +40,19 @@ public:
 	void update(int index, int value){
 		original[index] = value;
 		n = original.size();
-		
+
 		data = vector<int>(2 * n);
 		//Updates the minimum of each node thats related to the updated index
 		copy(original.begin(), original.end(), &data[0] + n);
 		//Each node is being filled in from the bottom up
 		for (int index = n - 1; index > 0; index--){
-			data[index] = min(data[index * 2], data[index * 2 + 1]);
+			if(mode == "min"){
+				data[index] = min(data[index * 2], data[index * 2 + 1]);
+			}else if(mode == "max"){
+				data[index] = max(data[index * 2], data[index * 2 + 1]);
+			}else if(mode == "sum"){
+				data[index] = data[index * 2] + data[index * 2 + 1];
+			}
 		}
 	}
 
@@ -74,12 +79,18 @@ public:
 		original.insert(original.begin() + insIndex, insValue);
 		original[insIndex] = insValue;
 		n = original.size();
-		
+
 		data = vector<int>(2 * n);
 		copy(original.begin(), original.end(), &data[0] + n);
 		//Each node is being filled in from the bottom up
 		for (int index = n - 1; index > 0; index--){
-			data[index] = min(data[index * 2], data[index * 2 + 1]);
+			if(mode == "min"){
+				data[index] = min(data[index * 2], data[index * 2 + 1]);
+			}else if(mode == "max"){
+				data[index] = max(data[index * 2], data[index * 2 + 1]);
+			}else if(mode == "sum"){
+				data[index] = data[index * 2] + data[index * 2 + 1];
+			}
 		}
 	}
 
@@ -102,6 +113,7 @@ public:
 
 private:
 	int n;
+	string mode;
 	vector<int> data;
 	vector<int> original;
 };
@@ -125,14 +137,6 @@ int main(int argc, char* argv[]){
     vector<string> trees;
 
     readFile(input_file, &numVector);
-
-	SegmentTree st2(numVector);
-	st2.view("normal.txt");
-	st2.search(3);
-	st2.insert(4,3);
-	st2.view("insert.txt");
-	st2.search(3);
-	st2.update(5,0);
-	st2.view("update.txt");
-	st2.search(0);
+	
+	//Insert code here to create segment trees!
 }
