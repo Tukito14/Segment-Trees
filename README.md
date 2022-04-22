@@ -1,7 +1,5 @@
  # Segment Trees
-
-Segment trees are Binary Search Trees that 
-
+ 
   1. [Creating the Segment Tree](#creating-the-segment-tree)
   2. [Updating the Segment Tree](#updating-the-segment-tree)
   3. [Inserting into the Segment Tree](#inserting-into-the-segment-tree)
