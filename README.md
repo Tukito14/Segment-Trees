@@ -6,11 +6,28 @@
   4. [Viewing your Segment Tree](#viewing-your-segment-tree)
 
  # [Creating the Segment Tree](#segment-trees)
- We first create a vector to store the values from our input text file:
+ We first create a vector to store the values from our input text file using command-line arguments:
  ![image](https://user-images.githubusercontent.com/72944152/163855348-ddc1303a-7534-4061-b164-29d5e6b56595.png)
+ 
+ EX:
+ ```
+ g++ -std=c++11 -Wall segment.cpp -o test -ggdb
+ ./test numbers.txt
+ ```
+ 
 
-When then create another vector double the size of the first minus 1, were we put the values towards the end of the vector:
+Whe then create another vector double the size of the first minus 1, were we put the values towards the end of the vector:
 ![image](https://user-images.githubusercontent.com/72944152/163862583-e5f06512-6d98-4ee6-b2f0-7e5a1a9403c6.png)
+
+The second variable can be either, "sum", "max" or "min", depending on what you want your tree to do.
+1. Sum returns the sum of all the values in the vector/tree.
+2. Max returns the maximum value of the values in the vector/tree.
+3. Min returns the minimum value of the values in the vector/tree.
+
+EX:
+```
+SegmentTree st(numVector, "min");
+```
 
 This will be our Segment Tree, for all intents and purposes. 
 
