@@ -41,10 +41,9 @@ public:
 		original[index] = value;
 		n = original.size();
 
+		//Recreating the vector that is used to represent our segment tree
 		data = vector<int>(2 * n);
-		//Updates the minimum of each node thats related to the updated index
 		copy(original.begin(), original.end(), &data[0] + n);
-		//Each node is being filled in from the bottom up
 		for (int index = n - 1; index > 0; index--){
 			if(mode == "min"){
 				data[index] = min(data[index * 2], data[index * 2 + 1]);
@@ -80,9 +79,9 @@ public:
 		original[insIndex] = insValue;
 		n = original.size();
 
+		//Recreating the vector that is used to represent our segment tree
 		data = vector<int>(2 * n);
 		copy(original.begin(), original.end(), &data[0] + n);
-		//Each node is being filled in from the bottom up
 		for (int index = n - 1; index > 0; index--){
 			if(mode == "min"){
 				data[index] = min(data[index * 2], data[index * 2 + 1]);
@@ -137,6 +136,6 @@ int main(int argc, char* argv[]){
     vector<string> trees;
 
     readFile(input_file, &numVector);
-	
-	//Insert code here to create segment trees!
+    
+    //Insert code here to create segment trees!
 }
