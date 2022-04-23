@@ -58,7 +58,7 @@ public:
 	//Searches through the vector to find the specified value
 	void search(int info){
 		vector<int> found;
-		for(long unsigned int i = 0; i < data.size(); i++){
+		for(long unsigned int i = 1; i < data.size(); i++){
 			if(data[i] == info){
 				found.push_back(i+1);
 			}
