@@ -9,6 +9,12 @@
  We first create a vector to store the values from our input text file using command-line arguments:
  ![image](https://user-images.githubusercontent.com/72944152/163855348-ddc1303a-7534-4061-b164-29d5e6b56595.png)
  
+ You can use the values provided in numbers.txt, or make your own. If making your own, make sure each value is seperated by a comma.
+ 
+ ```
+ 6,5,4,3,2,1
+ ```
+ 
  EX:
  ```
  g++ -std=c++11 -Wall segment.cpp -o test -ggdb
