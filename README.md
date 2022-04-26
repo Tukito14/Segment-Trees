@@ -5,6 +5,10 @@
   3. [Inserting into the Segment Tree](#inserting-into-the-segment-tree)
   4. [Viewing your Segment Tree](#viewing-your-segment-tree)
 
+Report:
+
+https://docs.google.com/document/d/1jL8fjUv6Un9rhf4OuqHGcZNyCn3NJgp3WJ7-5Q-driw/edit?usp=sharing
+
  # [Creating the Segment Tree](#segment-trees)
  We first create a vector to store the values from our input text file using command-line arguments:
  ![image](https://user-images.githubusercontent.com/72944152/163855348-ddc1303a-7534-4061-b164-29d5e6b56595.png)
