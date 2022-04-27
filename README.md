@@ -94,9 +94,10 @@ Output shold look similar to this:
 3 was found at: 9
 Found 2 time(s).
 ```
-
+```
  Code: Diego Perez-Torres
  Presentation description, real-life application and history: (insert names here)
  Presentation explanation of code: Diego Perez-Torres
  Report methods: (insert names here)
  Presentation implementation: Diego Perez-Torres
+```
