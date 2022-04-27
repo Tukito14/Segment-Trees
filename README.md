@@ -96,8 +96,8 @@ Found 2 time(s).
 ```
 ```
  Code: Diego Perez-Torres
- Presentation description, real-life application and history: (insert names here)
+ Presentation description, real-life application and history: Hayden St. Germain, Alex Lang
  Presentation explanation of code: Diego Perez-Torres
- Report methods: (insert names here)
+ Report methods: Hayden St. Germain, Alex Lang
  Presentation implementation: Diego Perez-Torres
 ```
