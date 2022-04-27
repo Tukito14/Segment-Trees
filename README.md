@@ -96,6 +96,7 @@ Found 2 time(s).
 ```
 ```
  Code: Diego Perez-Torres
+ GitHub README.md: Diego Perez-Torres
  Presentation description, real-life application and history: Hayden St. Germain, Alex Lang
  Presentation explanation of code: Diego Perez-Torres
  Report methods: Hayden St. Germain, Alex Lang
