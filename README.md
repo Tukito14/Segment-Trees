@@ -22,7 +22,7 @@
  ```
  
 
-Whe then create another vector double the size of the first minus 1, were we put the values towards the end of the vector:
+We then create another vector double the size of the first minus 1, were we put the values towards the end of the vector:
 ![image](https://user-images.githubusercontent.com/72944152/163862583-e5f06512-6d98-4ee6-b2f0-7e5a1a9403c6.png)
 
 The second variable can be either, "sum", "max" or "min", depending on what you want your tree to do.
